@@ -91,22 +91,23 @@ namespace ExcelStudyHome
                     array.Add(list);
                 }
             }
-
-
-            object[,] value = new object[array.Count, array[0].Count];
-
-            for (int i = 0; i < array.Count; i++)
+            if (array.Count > 0)
             {
-                for (int j = 0; j < array[0].Count; j++)
+                object[,] value = new object[array.Count, array[0].Count];
+
+                for (int i = 0; i < array.Count; i++)
                 {
-                    value[i, j] = array[i][j];
+                    for (int j = 0; j < array[0].Count; j++)
+                    {
+                        value[i, j] = array[i][j];
+                    }
                 }
+                //object[,] arr = { { "张三", 22, 2 }, { "李四", 33, 3 }, { "赵五", 44, 4 } };
+                //app.Range["a1"].get_Resize(1, 1).Value2 = 1;
+                app.Range["a1"].get_Resize(array.Count, 3).Value2 = value;
+                //app.Range["b1"].get_Resize(3, 2).Select();
+                //app.Range["a10"].get_Resize(3, 3).Value2 = app.WorksheetFunction.Transpose(array.ToArray());
             }
-            //object[,] arr = { { "张三", 22, 2 }, { "李四", 33, 3 }, { "赵五", 44, 4 } };
-            //app.Range["a1"].get_Resize(1, 1).Value2 = 1;
-            app.Range["a1"].get_Resize(array.Count, 3).Value2 = value;
-            //app.Range["b1"].get_Resize(3, 2).Select();
-            //app.Range["a10"].get_Resize(3, 3).Value2 = app.WorksheetFunction.Transpose(array.ToArray());
         }
     }
 }
