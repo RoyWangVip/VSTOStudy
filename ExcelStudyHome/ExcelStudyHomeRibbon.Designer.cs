@@ -43,6 +43,7 @@
             this.button5 = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tab1
             // 
@@ -80,13 +81,13 @@
             // 
             // button4
             // 
-            this.button4.Label = "11.23.剪贴板贴Excel";
+            this.button4.Label = "11.23.数组写入Excel";
             this.button4.Name = "button4";
             this.button4.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Label = "11.23.数组写入Excel";
+            this.button5.Label = "11.23.剪贴板贴Excel";
             this.button5.Name = "button5";
             this.button5.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button5_Click);
             // 
@@ -100,6 +101,7 @@
             this.tab1.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 
